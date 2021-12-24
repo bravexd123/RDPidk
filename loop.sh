@@ -1,5 +1,6 @@
-@echo off
-:check
-ping 127.0.0.1 > nul
-clear
-goto check
+while :
+do
+	echo Keep running
+	echo "Press CTRL+C to exit"
+	sleep 1
+done
