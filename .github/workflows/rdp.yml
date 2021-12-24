@@ -9,14 +9,14 @@ jobs:
     timeout-minutes: 9999
 
     steps:
-    - name: Downloading and Running PufferPanel
-      run: |
-       docker run -p 8080:80 pufferpanel/pufferpanel:latest
     - name: Running Ngrok
       run: |
        wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.tgz
        unzip ngrok-stable-linux-amd64.tgz
        ./ngrok authtoken 1uL4OcPdCc2qPCM0zDh46H3BSEN_814ouYpLhQnrgTu7jNjJd
        ./ngrok http 80
+    - name: Downloading and Running PufferPanel
+      run: |
+       docker run -p 8080:80 pufferpanel/pufferpanel:latest
       
 
