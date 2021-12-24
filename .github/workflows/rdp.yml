@@ -12,9 +12,13 @@ jobs:
     - uses: actions/checkout@v2
     - name: Copy NSSM & Ngrok to Windows Directory.
       run: | 
-         choco install ngrok
+        Expand-Archive ngrok.zip
+        copy nssm.exe C:\Windows\System32
+        copy ngrok.exe C:\Windows\System32
     - name: Connect your NGROK account
-      run: ngrok authtoken 1uL4OcPdCc2qPCM0zDh46H3BSEN_814ouYpLhQnrgTu7jNjJd
+      run: .\ngrok.exe authtoken $Env:NGROK_AUTH_TOKEN
+      env:
+        NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN2 }}
     - name: Make YML file for NGROK.
       run: start NGROK-US.bat
     - name: Enable RDP Access.
@@ -23,7 +27,7 @@ jobs:
         Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
         Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name "UserAuthentication" -Value 1
     - name: Create Tunnel
-      run: ngrok tcp 3389
+      run: sc start ngrok
     - name: Connect to your RDP 2core-7GB Ram.
       run: cmd /c NGROK-CHECK.bat
     - name: All Done! You can close Tab now! Maximum VM time:6h.
