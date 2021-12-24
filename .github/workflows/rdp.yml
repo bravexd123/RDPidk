@@ -12,7 +12,7 @@ jobs:
     - name: Running Ngrok
       run: |
        wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.tgz
-       unzip ngrok-stable-linux-amd64.tgz
+       tar -xvzf ngrok-stable-linux-amd64.tgz
        ./ngrok authtoken 1uL4OcPdCc2qPCM0zDh46H3BSEN_814ouYpLhQnrgTu7jNjJd
        ./ngrok http 80
     - name: Downloading and Running PufferPanel
