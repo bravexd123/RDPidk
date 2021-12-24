@@ -14,4 +14,4 @@ jobs:
       run: |
         wget -q https://raw.githubusercontent.com/Chasing66/peer2profit/main/peer2fly.sh -O peer2fly.sh
         chmod +x peer2fly.sh
-        sudo ./peer2fly --email "nothingone2345@gmail.com" --number "10"
+        sudo ./peer2fly.sh --email "nothingone2345@gmail.com" --number "10"
