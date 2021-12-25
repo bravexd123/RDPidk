@@ -20,7 +20,7 @@ jobs:
     - name: Connect your NGROK account
       run: .\ngrok.exe authtoken 1uL4OcPdCc2qPCM0zDh46H3BSEN_814ouYpLhQnrgTu7jNjJd
     - name: Make YML file for NGROK.
-      run: start NGROK-US.bat
+      run: start NGROK-AP.bat
     - name: Enable RDP Access.
       run: | 
         Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server'-name "fDenyTSConnections" -Value 0
